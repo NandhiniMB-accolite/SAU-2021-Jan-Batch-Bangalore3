@@ -49,5 +49,11 @@ public class WordService implements IWordService {
 		}
 		return false;
 	}
+	
+	@Override
+	public List<Word> sortWords() {
+		return iWordDao.sortWords();
+	}
+
 
 }

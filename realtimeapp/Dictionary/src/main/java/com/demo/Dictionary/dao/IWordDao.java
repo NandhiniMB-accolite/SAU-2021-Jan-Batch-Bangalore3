@@ -15,4 +15,8 @@ public interface IWordDao {
 	public List<Word> searchByPattern(String pattern);
 
 	public int update(Word word);
+
+	public List<Word> sortWords();
+
+	
 }

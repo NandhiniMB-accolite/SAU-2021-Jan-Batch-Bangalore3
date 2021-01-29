@@ -132,4 +132,25 @@ public class WordDaoImpl implements IWordDao {
 		});
 	}
 
+	
+	
+	@Override
+	public List<Word> sortWords() {
+		logger.info(WordQueries.VIEW_QUERY);
+
+		List<Word> wordList = namedParameterJdbcTemplate.query(WordQueries.VIEW_QUERY, (resultSet, rowNum) -> {
+			Word word = new Word();
+			word.setId(resultSet.getInt(WordTableConstants.ID));
+			word.setCreationTm(resultSet.getDate(WordTableConstants.CREATION_TM));
+			word.setExample(resultSet.getString(WordTableConstants.EXAMPLE));
+			word.setLastModifiedTm(resultSet.getDate(WordTableConstants.LAST_MODIFIED_TM));
+			word.setMeaning(resultSet.getString(WordTableConstants.MEANING));
+			word.setPartOfSpeech(resultSet.getString(WordTableConstants.POS));
+			word.setWord(resultSet.getString(WordTableConstants.WORD));
+			return word;
+		});
+		Collections.sort(wordList);
+		return wordList;
+	}
+
 }

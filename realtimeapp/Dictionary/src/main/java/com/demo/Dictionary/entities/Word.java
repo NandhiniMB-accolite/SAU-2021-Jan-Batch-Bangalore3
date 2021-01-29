@@ -1,6 +1,5 @@
 package com.demo.Dictionary.entities;
 
-import java.util.Comparator;
 import java.util.Date;
 
 public class Word implements Comparable<Word> {
@@ -18,17 +17,6 @@ public class Word implements Comparable<Word> {
 		// TODO Auto-generated method stub
 		return this.creationTm.compareTo(word1.getCreationTm());
 	}
-//	@Override
-//	public int compare(Word word1, Word word2) {
-//		// TODO Auto-generated method stub
-//		return word1.getCreationTm().compareTo(word2.getCreationTm());
-//	}
-
-//	public static Comparator<Word> COMPARE_BY_CREATION_TIME = new Comparator<T>() {
-//		public int compare(Word word1, Word word2) {
-//			return word1.creationTm.compareTo(word2.creationTm);
-//		}
-//	};
 
 	public Integer getId() {
 		return id;

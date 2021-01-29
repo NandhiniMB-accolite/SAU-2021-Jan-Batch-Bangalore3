@@ -16,4 +16,6 @@ public interface IWordService {
 
 	public boolean update(Word word);
 
+	public List<Word> sortWords();
+
 }

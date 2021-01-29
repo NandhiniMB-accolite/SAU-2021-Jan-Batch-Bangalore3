@@ -51,5 +51,11 @@ public class WordController implements IWordService {
 	public List<Word> getMatching(@PathVariable String pattern) {
 		return iWordService.getMatching(pattern);
 	}
+	
+	@GetMapping("/sortWords")
+	public List<Word> sortWords() {
+		return iWordService.sortWords();
+
+	}
 
 }
